@@ -62,17 +62,19 @@ def answers(message):
         bot.send_message(message.chat.id, "Здравствуйте!")
     elif message.text == 'Help':
         bot.send_message(message.chat.id, "Чем вам помочь?")
-    if message.text == 'About_author':
+    elif message.text == 'About_author':
         bot.send_message(message.chat.id, "Я - Анна, я - создатель)!")
+    else:
+        bot.send_message(message.chat.id, message.text)
 
 
 # @bot.message_handler(func=lambda message: True)
 # def echo_all(message):
 #  	bot.reply_to(message, message.text)
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
- 	bot.send_message(message.chat.id, message.text)
+# @bot.message_handler(func=lambda message: True)
+# def echo_all(message):
+#  	bot.send_message(message.chat.id, message.text)
 
 bot.infinity_polling()
 input()
