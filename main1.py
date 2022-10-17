@@ -32,9 +32,9 @@ def handle(call):
     # bot.send_message(call.message.chat.id, 'Data: {}'.format(str(call.data)))
     if call.data == '/start':
         bot.send_message(call.message.chat.id, 'Привет!')
-    if call.data == '/about_author':
+    elif call.data == '/about_author':
         bot.send_message(call.message.chat.id, 'Привет! Меня зовут Анна. Я автор этого канал.')
-    if call.data == '/help':
+    elif call.data == '/help':
         bot.send_message(call.message.chat.id, 'Могу я чем-нибудь помочь?')
     bot.answer_callback_query(call.id)
 
